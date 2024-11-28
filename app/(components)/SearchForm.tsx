@@ -8,7 +8,7 @@ const SearchForm = ({ query }: { query?: string }) => {
     <Form
       action="/"
       scroll={false}
-      className="mt-10 relative w-fit"
+      className="relative w-fit"
       id="search-form"
     >
       <input
