@@ -33,7 +33,7 @@ const Nav = async () => {
           {session ? (
             <ul className="list-none flex gap-6 items-center">
               <li>
-                <Link href="/" className="flex items-center gap-2">
+                <Link href="/write" className="flex items-center gap-2">
                   <SquarePen size={16} />
                   Write
                 </Link>
