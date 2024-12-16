@@ -14,7 +14,7 @@ const options = [
 
 const SelectComponent = () => {
     return (
-        <Select options={options} isMulti={true} />
+        <Select options={options} isMulti={true} className="w-full" />
     )
 }
 

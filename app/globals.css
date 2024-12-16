@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -16,4 +18,141 @@ body {
 .container{
   inline-size: 90%;
   margin: auto;
+}
+
+.tiptap {
+  outline: none;
+  background-color: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  :first-child {
+    margin-top: 0;
+  }
+
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+    margin-top: 2rem;
+    text-wrap: pretty;
+    font-weight: 600;
+  }
+
+  h1,
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+
+  p.is-editor-empty:first-child::before {
+    color: #333333;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .is-empty::before {
+    color: #333333;
+    opacity: 0.4;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  code {
+    background-color: lightgray;
+    color: lightcoral;
+    border-radius: 2px;
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
+
+  a {
+    color: lightgray;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: gray;
+    }
+  }
+
+  ul,
+  ol {
+    padding: 0 1rem;
+    margin: 1rem 1rem 1.25rem 0.4rem;
+
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
+
+  ul{
+    list-style: circle;
+  }
+
+  ol{
+    list-style: number;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid gray;
+    cursor: pointer;
+    margin: 1.5rem 0;
+  }
+
+  ul[data-type="taskList"] {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+
+    li {
+      align-items: flex-start;
+      display: flex;
+
+      > label {
+        flex: 0 0 auto;
+        margin-right: 0.5rem;
+        user-select: none;
+      }
+
+      > div {
+        flex: 1 1 auto;
+      }
+    }
+
+    input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    ul[data-type="taskList"] {
+      margin: 0;
+    }
+  }
 }
