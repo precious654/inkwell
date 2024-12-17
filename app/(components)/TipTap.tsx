@@ -20,7 +20,7 @@ import HorizontalRule from "@tiptap/extension-horizontal-rule";
 import TaskList from "@tiptap/extension-task-list";
 import TaskItem from "@tiptap/extension-task-item";
 import CharacterCount from "@tiptap/extension-character-count";
-import {BubbleMenu, EditorContent, useEditor} from "@tiptap/react";
+import {BubbleMenu, FloatingMenu, EditorContent, useEditor} from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
 import BoldIcon from "@/app/(components)/icons/BoldIcon";
@@ -183,56 +183,40 @@ const Tiptap = () => {
             .run();
     }, [editor]);
 
+    const [toggleMenu, setToggleMenu] = React.useState(false);
+
     if (!editor) {
         return null;
     }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.code === "Slash") {
+            setToggleMenu(!toggleMenu);
+        }
+    })
 
     return (
         <>
             <p className="text-end font-bold mt-5">{editor.storage.characterCount.words()} words</p>
             <div>
-                <div className="flex gap-3 items-center mb-2">
-                    <button
-                        onClick={() =>
-                            editor.chain().focus().toggleHeading({level: 1}).run()
-                        }
-                    >
-                        H1
-                    </button>
-                    <button
-                        onClick={() =>
-                            editor.chain().focus().toggleHeading({level: 2}).run()
-                        }
-                    >
-                        H2
-                    </button>
-                    <button
-                        onClick={() =>
-                            editor.chain().focus().toggleHeading({level: 3}).run()
-                        }
-                    >
-                        H3
-                    </button>
-                    <button onClick={setLink}>L</button>
-                    <button
-                        onClick={() => editor.chain().focus().toggleBulletList().run()}
-                    >
-                        Uo
-                    </button>
-                    <button
-                        onClick={() => editor.chain().focus().toggleOrderedList().run()}
-                    >
-                        Ol
-                    </button>
-                    <button
-                        onClick={() => editor.chain().focus().setHorizontalRule().run()}
-                    >
-                        HR
-                    </button>
-                    <button onClick={() => editor.chain().focus().toggleTaskList().run()}>
-                        To
-                    </button>
-                </div>
+                {
+                    editor && <FloatingMenu editor={editor} tippyOptions={{
+                        duration: 100,
+                        onShow(instance: Instance<TProps>): void | false {
+                            return toggleMenu;
+                        },
+                    }}>
+                        <div className="flex flex-col p-1.5 gap-2 bg-[#F5F5F5] rounded-lg">
+                            <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().toggleHeading({level: 1}).run() }>Heading 1</p>
+                            <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().toggleHeading({level: 2}).run()}>Heading 2</p>
+                            <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().toggleHeading({level: 3}).run() }>Heading 3</p>
+                            <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().toggleBulletList().run() }>Bulleted list</p>
+                            <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().toggleOrderedList().run() }>Numbered list</p>
+                            <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().setHorizontalRule().run() }>Horinzontal rule</p>
+                            <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().toggleTaskList().run() }>Todo list</p>
+                        </div>
+                    </FloatingMenu>
+                }
             </div>
 
             <div>
