@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import SearchForm from "@/app/(components)/SearchForm";
+import mongoose from "mongoose"
 import data from "@/data/data.json";
 import categories from "@/data/categories.json";
 import creators from "@/data/creators.json";
 import picture from "@/public/assets/john-wick-4-paris-poster.jpg";
 import profile1 from "@/public/assets/profile1.jpg";
-
 
 export default async function Home({
   searchParams,
@@ -18,6 +18,9 @@ export default async function Home({
   const anotherData: BlogData[] = data.filter((item: BlogData) => item.id < 5);
   const businessData: BlogData[] = [data[0], data[1]];
   const sportNews: BlogData[] = [data[2], data[3]];
+
+  mongoose.connect("mongodb+srv://odukwechiemeka:" + process.env.MONGODB_PWD + "@cluster0.8yoj9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+
   return (
       <main>
           <section className="py-10 w-full flex justify-center text-center bg-[#F9FAFB] rounded-xl mt-10">
@@ -285,10 +288,9 @@ export default async function Home({
                           <div key={category.id} className="flex flex-col gap-3">
                               <p className="text-lg font-semibold">{category.main}</p>
                               <ul className="list none flex flex-col gap-1">
-                                  {category.sub.map((sub: string) => {
+                                  {category.sub.map((sub: string, index: number) => {
                                       return (
-                                          // eslint-disable-next-line react/jsx-key
-                                          <li className="text-md text-gray-400">{sub}</li>
+                                          <li className="text-md text-gray-400" key={index}>{sub}</li>
                                       )
                                   })}
                               </ul>

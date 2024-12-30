@@ -202,9 +202,6 @@ const Tiptap = () => {
                 {
                     editor && <FloatingMenu editor={editor} tippyOptions={{
                         duration: 100,
-                        onShow(instance: Instance<TProps>): void | false {
-                            return toggleMenu;
-                        },
                     }}>
                         <div className="flex flex-col p-1.5 gap-2 bg-[#F5F5F5] rounded-lg">
                             <p className="font-semibold p-1 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={ () => editor.chain().focus().toggleHeading({level: 1}).run() }>Heading 1</p>
