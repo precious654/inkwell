@@ -183,17 +183,9 @@ const Tiptap = () => {
             .run();
     }, [editor]);
 
-    const [toggleMenu, setToggleMenu] = React.useState(false);
-
     if (!editor) {
         return null;
     }
-
-    document.addEventListener("keydown", (e) => {
-        if (e.code === "Slash") {
-            setToggleMenu(!toggleMenu);
-        }
-    })
 
     return (
         <>
@@ -215,7 +207,6 @@ const Tiptap = () => {
                     </FloatingMenu>
                 }
             </div>
-
             <div>
                 {editor && (
                     <BubbleMenu editor={editor} tippyOptions={{duration: 100}}>
@@ -292,7 +283,6 @@ const Tiptap = () => {
                     </BubbleMenu>
                 )}
             </div>
-
             <EditorContent editor={editor}/>
         </>
     );

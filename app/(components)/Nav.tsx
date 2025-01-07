@@ -10,7 +10,7 @@ const Nav = async () => {
         <header className="py-4">
             <nav className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                    <p className="text-2xl text-red-400">Inkwell</p>
+                    <Link href="/" className="text-2xl text-red-400">Inkwell</Link>
 
                     <p className="w-0.5 h-6 bg-[#70706E] rounded-sm"></p>
 
@@ -59,7 +59,7 @@ const Nav = async () => {
                             </li>
                             <li>
                                 <Link href={`/user/${session?.id}`}>
-                                    <Image src={session?.user?.image} alt="profile" width={20} height={20}
+                                    <Image src={session?.user?.image} alt="profile" width={35} height={20}
                                            className="rounded-full"/>
                                 </Link>
                             </li>

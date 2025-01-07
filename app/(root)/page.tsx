@@ -53,7 +53,7 @@ export default async function Home({
                                   <p>{item.author}</p>
                                   <p>. {item.createdAt}</p>
                               </div>
-                              <p className="font-semibold text-2xl">{item.title}</p>
+                              <Link href={`/article/${item.id}`} className="font-semibold text-2xl">{item.title}</Link>
                               <p className="text-gray-700">{item.description}</p>
                               <div className="flex items-center gap-1 text-sm">
                                   <p className="text-red-400">{item.category}</p>
@@ -68,7 +68,7 @@ export default async function Home({
           <section className="mt-20">
               <div className="flex items-center justify-between">
                   <p className="text-2xl font-semibold">Latest News</p>
-                  <Link href="/" className="text-red-400 font-semibold">See all &#8594;</Link>
+                  <Link href="/article" className="text-red-400 font-semibold">See all &#8594;</Link>
               </div>
 
               <div className="flex items-center gap-6 mt-5">
@@ -82,7 +82,7 @@ export default async function Home({
                                   <p>{item.author}</p>
                                   <p>. {item.createdAt}</p>
                               </div>
-                              <p className="font-semibold text-lg">{item.title}</p>
+                              <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
                               <p className="text-gray-700 text-sm">{item.description}</p>
                               <div className="flex items-center gap-1 text-sm">
                                   <p className="text-red-400">{item.category}</p>
@@ -97,7 +97,7 @@ export default async function Home({
           <section className="mt-20">
               <div className="flex items-center justify-between mb-10">
                   <p className="text-2xl font-semibold capitalize">must read</p>
-                  <Link href="/" className="text-red-400 font-semibold">See all &#8594;</Link>
+                  <Link href="/article" className="text-red-400 font-semibold">See all &#8594;</Link>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
@@ -112,7 +112,7 @@ export default async function Home({
                                       <p>{item.author}</p>
                                       <p>. {item.createdAt}</p>
                                   </div>
-                                  <p className="font-semibold text-lg">{item.title}</p>
+                                  <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
                                   <div className="flex items-center gap-1 text-sm">
                                       <p className="text-red-400">{item.category}</p>
                                       <p>. {item.readTime}</p>
@@ -127,7 +127,7 @@ export default async function Home({
           <section className="mt-20">
               <div className="flex items-center justify-between mb-10">
                   <p className="text-2xl font-semibold capitalize">Editor&#39;s pick</p>
-                  <Link href="/" className="text-red-400 font-semibold">See all &#8594;</Link>
+                  <Link href="/article" className="text-red-400 font-semibold">See all &#8594;</Link>
               </div>
 
               <div className="relative">
@@ -143,7 +143,7 @@ export default async function Home({
                                       <p>{item.author}</p>
                                       <p>. {item.createdAt}</p>
                                   </div>
-                                  <p className="font-semibold text-lg">{item.title}</p>
+                                  <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
                                   <p className="text-sm">{item.description}</p>
                                   <div className="flex items-center gap-1 text-sm">
                                       <p className="text-red-400">{item.category}</p>
@@ -166,7 +166,7 @@ export default async function Home({
                                   <p>{item.author}</p>
                                   <p>. {item.createdAt}</p>
                               </div>
-                              <p className="font-semibold text-lg">{item.title}</p>
+                              <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
                               <div className="flex items-center gap-1 text-sm">
                                   <p className="text-red-400">{item.category}</p>
                                   <p>. {item.readTime}</p>
@@ -181,7 +181,7 @@ export default async function Home({
               <div>
                   <div className="flex items-center justify-between mb-10">
                       <p className="text-2xl font-semibold capitalize">Business news</p>
-                      <Link href="/" className="text-red-400 font-semibold">&#8594;</Link>
+                      <Link href="/article" className="text-red-400 font-semibold">&#8594;</Link>
                   </div>
                   <div className="flex gap-4">
                       {businessData.map((item: BlogData) => {
@@ -194,7 +194,7 @@ export default async function Home({
                                       <p>{item.author}</p>
                                       <p>. {item.createdAt}</p>
                                   </div>
-                                  <p className="font-semibold text-lg">{item.title}</p>
+                                  <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
                                   <p className="text-gray-700 text-sm">{item.description}</p>
                                   <div className="flex items-center gap-1 text-sm">
                                       <p className="text-red-400">{item.category}</p>
@@ -209,7 +209,7 @@ export default async function Home({
               <div>
                   <div className="flex items-center justify-between mb-10">
                       <p className="text-2xl font-semibold capitalize">Sport news</p>
-                      <Link href="/" className="text-red-400 font-semibold">&#8594;</Link>
+                      <Link href="/article" className="text-red-400 font-semibold">&#8594;</Link>
                   </div>
                   <div className="flex items-center gap-4">
                       {sportNews.map((item: BlogData) => {
@@ -222,7 +222,7 @@ export default async function Home({
                                       <p>{item.author}</p>
                                       <p>. {item.createdAt}</p>
                                   </div>
-                                  <p className="font-semibold text-lg">{item.title}</p>
+                                  <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
                                   <p className="text-gray-700 text-sm">{item.description}</p>
                                   <div className="flex items-center gap-1 text-sm">
                                       <p className="text-red-400">{item.category}</p>

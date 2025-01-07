@@ -15,9 +15,18 @@ body {
   background-color: #FFFFFF;
 }
 
+img{
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
 .container{
   inline-size: 90%;
   margin: auto;
+}
+
+.article-image{
+  block-size: 50%;
 }
 
 .tiptap {
