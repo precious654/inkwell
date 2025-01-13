@@ -3,7 +3,6 @@ import Link from "next/link";
 import SearchForm from "@/app/(components)/SearchForm";
 import mongoose from "mongoose"
 import data from "@/data/data.json";
-import categories from "@/data/categories.json";
 import creators from "@/data/creators.json";
 import picture from "@/public/assets/john-wick-4-paris-poster.jpg";
 import profile1 from "@/public/assets/profile1.jpg";
@@ -48,9 +47,11 @@ export default async function Home({
                           <Image src={picture} alt={item.title} width={500} className="rounded-xl"/>
                           <div className="px-4 flex flex-col gap-6">
                               <div className="flex items-center gap-1">
-                                  <Image src={profile1} alt={item.author} width={25} height={20}
-                                         className="rounded-full"/>
-                                  <p>{item.author}</p>
+                                  <Link href={`/author/${item.id}`}>
+                                      <Image src={profile1} alt={item.author} width={25} height={20}
+                                             className="rounded-full"/>
+                                  </Link>
+                                  <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
                                   <p>. {item.createdAt}</p>
                               </div>
                               <Link href={`/article/${item.id}`} className="font-semibold text-2xl">{item.title}</Link>
@@ -77,9 +78,11 @@ export default async function Home({
                           <div key={item.id} className="flex flex-col gap-2 capitalize">
                               <Image src={picture} alt={item.title} className="rounded-xl h-32 mb-1.5"/>
                               <div className="flex items-center gap-1 text-sm">
-                                  <Image src={profile1} alt={item.author} width={25} height={20}
-                                         className="rounded-full"/>
-                                  <p>{item.author}</p>
+                                  <Link href={`/author/${item.id}`}>
+                                      <Image src={profile1} alt={item.author} width={25} height={20}
+                                             className="rounded-full"/>
+                                  </Link>
+                                  <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
                                   <p>. {item.createdAt}</p>
                               </div>
                               <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -107,9 +110,11 @@ export default async function Home({
                               <Image src={picture} alt={item.title} className="rounded-xl"/>
                               <div className="flex flex-col gap-2 mt-3 text-[#FFFFFF] absolute bottom-4 left-4">
                                   <div className="flex items-center gap-1">
-                                      <Image src={profile1} alt={item.author} width={25} height={20}
-                                             className="rounded-full"/>
-                                      <p>{item.author}</p>
+                                      <Link href={`/author/${item.id}`}>
+                                          <Image src={profile1} alt={item.author} width={25} height={20}
+                                                 className="rounded-full"/>
+                                      </Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -138,9 +143,11 @@ export default async function Home({
 
                               <div className="flex flex-col gap-2 z-10 text-[#FFFFFF] absolute bottom-6 left-4">
                                   <div className="flex items-center gap-1 text-sm">
-                                      <Image src={profile1} alt={item.author} width={25} height={20}
-                                             className="rounded-full"/>
-                                      <p>{item.author}</p>
+                                      <Link href={`/author/${item.id}`}>
+                                          <Image src={profile1} alt={item.author} width={25} height={20}
+                                                 className="rounded-full"/>
+                                      </Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -161,9 +168,11 @@ export default async function Home({
                           <div key={item.id} className="flex flex-col gap-2 p-2 capitalize">
                               <Image src={picture} alt={item.title} className="rounded-xl h-32 mb-1.5"/>
                               <div className="flex items-center gap-1 text-sm">
-                                  <Image src={profile1} alt={item.author} width={25} height={20}
-                                         className="rounded-full"/>
-                                  <p>{item.author}</p>
+                                  <Link href={`/author/${item.id}`}>
+                                      <Image src={profile1} alt={item.author} width={25} height={20}
+                                             className="rounded-full"/>
+                                  </Link>
+                                  <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
                                   <p>. {item.createdAt}</p>
                               </div>
                               <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -189,9 +198,11 @@ export default async function Home({
                               <div key={item.id} className="flex flex-col gap-2 p-2 capitalize">
                                   <Image src={picture} alt={item.title} className="rounded-xl h-32 mb-1.5"/>
                                   <div className="flex items-center gap-1 text-sm">
-                                      <Image src={profile1} alt={item.author} width={25} height={20}
-                                             className="rounded-full"/>
-                                      <p>{item.author}</p>
+                                      <Link href={`/author/${item.id}`}>
+                                          <Image src={profile1} alt={item.author} width={25} height={20}
+                                                 className="rounded-full"/>
+                                      </Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -217,9 +228,11 @@ export default async function Home({
                               <div key={item.id} className="flex flex-col gap-2 p-2 capitalize">
                                   <Image src={picture} alt={item.title} className="rounded-xl h-32 mb-1.5"/>
                                   <div className="flex items-center gap-1 text-sm">
-                                      <Image src={profile1} alt={item.author} width={25} height={20}
-                                             className="rounded-full"/>
-                                      <p>{item.author}</p>
+                                      <Link href={`/author/${item.id}`}>
+                                          <Image src={profile1} alt={item.author} width={25} height={20}
+                                                 className="rounded-full"/>
+                                      </Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -238,17 +251,18 @@ export default async function Home({
           <section className="mt-20">
               <div className="flex items-center justify-between mb-10">
                   <p className="text-2xl font-semibold capitalize">Top creators</p>
-                  <Link href="/" className="text-red-400 font-semibold">See all &#8594;</Link>
               </div>
 
               <div className="flex items-center justify-between">
                   {creators.map((creator: CreatorData) => {
                       return (
                           <div key={creator.id} className="flex items-center gap-3">
-                              <Image src={profile1} alt={creator.name} width={70} height={40} className="rounded-full"/>
+                              <Link href={`/author/${creator.id}`}>
+                                  <Image src={profile1} alt={creator.name} width={70} height={40} className="rounded-full"/>
+                              </Link>
                               <div className="flex flex-col gap-1">
-                                  <p className="capitalize font-semibold text-xl">{creator.name}</p>
-                                  <p className="text-red-500">{creator.company}</p>
+                                  <Link href={`/author/${creator.id}`} className="capitalize font-semibold text-xl">{creator.name}</Link>
+                                  <Link href={`/author/${creator.id}`}  className="text-red-500">{creator.company}</Link>
                               </div>
                           </div>
                       )
@@ -256,7 +270,7 @@ export default async function Home({
               </div>
           </section>
 
-          <section className="py-10 px-14 w-full flex justify-between bg-[#F9FAFB] rounded-xl mt-20">
+          <section className="py-10 px-14 w-full flex justify-between bg-[#F9FAFB] rounded-xl my-20">
               <div className="w-5/12 flex flex-col gap-4">
                   <p className="text-xl font-medium tracking-widest uppercase">
                       Get first update
