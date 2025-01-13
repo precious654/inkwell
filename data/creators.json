@@ -2,22 +2,46 @@
   {
     "id": 1,
     "name": "alex young",
-    "company": "BBC News"
+    "profession": "Mystery Writer",
+    "company": "BBC News",
+    "location": "california, USA",
+    "bio": "I am an enthusiastic archaeologist who enjoys writing mystery novels.",
+    "description": "",
+    "articles": 5,
+    "likes": 568
   },
   {
     "id": 2,
     "name": "joe alen",
-    "company": "CNN"
+    "profession": "Fantasy Author and Philologist",
+    "company": "CNN",
+    "location": "New York, USA",
+    "bio": "I am passionate about inventing languages. One of the fictional tongues I've invented is the Elvish tongue",
+    "description": "",
+    "articles": 5,
+    "likes": 256
   },
   {
     "id": 3,
     "name": "alexa timber",
-    "company": "Formula 1"
+    "profession": "Poet, Memoirist, and Civil Rights Activist",
+    "company": "Formula 1",
+    "location": "toronto, canada",
+    "bio": "I love cooking and sometimes I blend my culinary expertise with my storytelling. I wrote a cookbook (Hallelujah! The Welcome Table), please check it out",
+    "description": "",
+    "articles": 5,
+    "likes": 463
   },
   {
     "id": 4,
     "image": "",
+    "profession": "Novelist",
     "name": "Ashley star",
-    "company": "Goal"
+    "company": "Goal",
+    "location": "texas, USA",
+    "bio": "I am a dedicated long-distance runner and have completed multiple marathons. I've written a memoir about it, What I Talk About When I Talk About Running. Check it out!!!!",
+    "description": "",
+    "articles": 5,
+    "likes": 165
   }
 ]

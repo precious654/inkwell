@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 import categories from "@/data/categories.json";
 import ScrollToTop from "./ScrollToTop";
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -11,8 +16,27 @@ const Footer = () => {
                     <p className="text-md">
                         Craft narratives that ignite inspiration, knowledge, and entertainment
                     </p>
-                    <div>
-
+                    <div className="flex items-center gap-3">
+                        <Link href="/" className="p-2 rounded-full bg-[#FFFFFF] shadow-md">
+                            <div className="p-2 rounded-full bg-red-500">
+                                <FaFacebookF className="text-[#FFFFFF]" />
+                            </div>
+                        </Link>
+                        <Link href="/" className="p-2 rounded-full bg-[#FFFFFF] shadow-md">
+                            <div className="p-2 rounded-full bg-red-500">
+                                <FaLinkedinIn className="text-[#FFFFFF]" />
+                            </div>
+                        </Link>
+                        <Link href="/" className="p-2 rounded-full bg-[#FFFFFF] shadow-md">
+                            <div className="p-2 rounded-full bg-red-500">
+                                <FaXTwitter className="text-[#FFFFFF]" />
+                            </div>
+                        </Link>
+                        <Link href="/" className="p-2 rounded-full bg-[#FFFFFF] shadow-md">
+                         <div className="p-2 rounded-full bg-red-500">
+                             <FaInstagram className="text-[#FFFFFF]" />
+                         </div>
+                        </Link>
                     </div>
                     <p className="text-sm text-gray-500 absolute bottom-7 left-1">Copyright © 2024 Inkwell</p>
                 </div>

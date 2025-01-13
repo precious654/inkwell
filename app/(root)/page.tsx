@@ -51,7 +51,7 @@ export default async function Home({
                                       <Image src={profile1} alt={item.author} width={25} height={20}
                                              className="rounded-full"/>
                                   </Link>
-                                  <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
+                                  <Link href={`/author/${item.id}`} className="capitalize hover:underline">{item.author}</Link>
                                   <p>. {item.createdAt}</p>
                               </div>
                               <Link href={`/article/${item.id}`} className="font-semibold text-2xl">{item.title}</Link>
@@ -82,7 +82,7 @@ export default async function Home({
                                       <Image src={profile1} alt={item.author} width={25} height={20}
                                              className="rounded-full"/>
                                   </Link>
-                                  <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
+                                  <Link href={`/author/${item.id}`} className="capitalize hover:underline">{item.author}</Link>
                                   <p>. {item.createdAt}</p>
                               </div>
                               <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -114,7 +114,7 @@ export default async function Home({
                                           <Image src={profile1} alt={item.author} width={25} height={20}
                                                  className="rounded-full"/>
                                       </Link>
-                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize hover:underline">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -147,7 +147,7 @@ export default async function Home({
                                           <Image src={profile1} alt={item.author} width={25} height={20}
                                                  className="rounded-full"/>
                                       </Link>
-                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize hover:underline">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -172,7 +172,7 @@ export default async function Home({
                                       <Image src={profile1} alt={item.author} width={25} height={20}
                                              className="rounded-full"/>
                                   </Link>
-                                  <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
+                                  <Link href={`/author/${item.id}`} className="capitalize hover:underline">{item.author}</Link>
                                   <p>. {item.createdAt}</p>
                               </div>
                               <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -202,7 +202,7 @@ export default async function Home({
                                           <Image src={profile1} alt={item.author} width={25} height={20}
                                                  className="rounded-full"/>
                                       </Link>
-                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize hover:underline">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -232,7 +232,7 @@ export default async function Home({
                                           <Image src={profile1} alt={item.author} width={25} height={20}
                                                  className="rounded-full"/>
                                       </Link>
-                                      <Link href={`/author/${item.id}`} className="capitalize">{item.author}</Link>
+                                      <Link href={`/author/${item.id}`} className="capitalize hover:underline">{item.author}</Link>
                                       <p>. {item.createdAt}</p>
                                   </div>
                                   <Link href={`/article/${item.id}`} className="font-semibold text-lg">{item.title}</Link>
@@ -261,7 +261,7 @@ export default async function Home({
                                   <Image src={profile1} alt={creator.name} width={70} height={40} className="rounded-full"/>
                               </Link>
                               <div className="flex flex-col gap-1">
-                                  <Link href={`/author/${creator.id}`} className="capitalize font-semibold text-xl">{creator.name}</Link>
+                                  <Link href={`/author/${creator.id}`} className="capitalize font-semibold text-xl hover:underline">{creator.name}</Link>
                                   <Link href={`/author/${creator.id}`}  className="text-red-500">{creator.company}</Link>
                               </div>
                           </div>
@@ -304,5 +304,11 @@ interface BlogData {
 interface CreatorData {
     id: number,
     name: string,
-    company: string
+    company: string,
+    profession: string,
+    location: string,
+    bio: string,
+    description: string,
+    articles: number,
+    likes: number,
 }

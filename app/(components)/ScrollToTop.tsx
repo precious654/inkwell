@@ -11,7 +11,7 @@ const ScrollToTop = () => {
     }
 
     return (
-        <div className="w-10 h-10 bg-[#FFFFFF] shadow-md rounded-full p-3 cursor-pointer" onClick={scrollToTopOfScreen}>
+        <div className="bg-[#FFFFFF] shadow-md rounded-full p-3 cursor-pointer" onClick={scrollToTopOfScreen}>
             <MoveUp size={16} className="text-red-400"/>
         </div>
     )

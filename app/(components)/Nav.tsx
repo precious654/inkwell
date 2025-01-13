@@ -32,7 +32,7 @@ const Nav = async () => {
 
                 <div>
                     {session ? (
-                        <ul className="list-none flex gap-6 items-center">
+                        <ul className="list-none flex gap-4 items-center">
                             <li>
                                 <Link href="/write" className="flex items-center gap-2">
                                     <SquarePen size={16}/>
@@ -40,7 +40,7 @@ const Nav = async () => {
                                 </Link>
                             </li>
                             <li>
-                                <BellDot size={16}/>
+                                <BellDot size={23}/>
                             </li>
                             <li>
                                 <form
