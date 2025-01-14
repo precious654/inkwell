@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from "next/image";
-import Link from "next/link";
 import profile from "@/public/assets/profile2.jpg";
 import creators from "@/data/creators.json";
+import Tabs from "@/app/(components)/Tabs";
 
 const Page = async ({params}: {params: Promise<{authorId: string }>}) => {
     const authorId = (await params).authorId;
@@ -31,7 +31,6 @@ const Page = async ({params}: {params: Promise<{authorId: string }>}) => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="flex gap-8 self-end">
                                         <div>
                                             <p>Articles</p>
@@ -47,14 +46,7 @@ const Page = async ({params}: {params: Promise<{authorId: string }>}) => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="mt-10">
-                                    <div className="w-full border-b border-gray-300 flex items-center gap-3">
-                                    <Link href="" className="hover:border-b-2 pb-2 border-[#333333]">Articles</Link>
-                                        <Link href="" className="hover:border-b-2 pb-2 border-[#333333]">Likes</Link>
-                                        <Link href="" className="hover:border-b-2 pb-2 border-[#333333]">About</Link>
-                                    </div>
-                                </div>
+                                <Tabs about={item.description} />
                             </div>
                         )
                     })

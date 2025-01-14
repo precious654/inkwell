@@ -7,7 +7,9 @@
     "createdAt": "12 minutes ago",
     "category": "movies",
     "readTime": "4 min read",
-    "image": "https://static1.cbrimages.com//wp-content/uploads/2023/02/john-wick-4-paris-poster.jpg"
+    "image": "https://static1.cbrimages.com//wp-content/uploads/2023/02/john-wick-4-paris-poster.jpg",
+    "views": 3094,
+    "likes": 1038
   },
   {
     "id": 2,
@@ -17,7 +19,9 @@
     "createdAt": "3 hours ago",
     "category": "sport",
     "readTime": "4 min read",
-    "image": ""
+    "image": "",
+    "views": 1098,
+    "likes": 231
   },
   {
     "id": 3,
@@ -27,7 +31,9 @@
     "createdAt": "12 hours ago",
     "category": "sport",
     "readTime": "4 min read",
-    "image": ""
+    "image": "",
+    "views": 95,
+    "likes": 20
   },
   {
     "id": 4,
@@ -37,7 +43,9 @@
     "createdAt": "23 hours ago",
     "category": "Crime",
     "readTime": "4 min read",
-    "image": ""
+    "image": "",
+    "views": 120,
+    "likes": 58
   },
   {
     "id": 5,
@@ -47,6 +55,8 @@
     "createdAt": "April 15, 2023",
     "category": "Middle East",
     "readTime": "4 min read",
-    "image": ""
+    "image": "",
+    "views": 50,
+    "likes": 7
   }
 ]

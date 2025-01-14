@@ -299,6 +299,8 @@ interface BlogData {
     category: string,
     readTime: string,
     image: string,
+    views: number,
+    likes: number,
 }
 
 interface CreatorData {
