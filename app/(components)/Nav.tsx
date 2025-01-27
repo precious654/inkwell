@@ -58,7 +58,7 @@ const Nav = async () => {
                                 </form>
                             </li>
                             <li>
-                                <Link href={`/user/${session?.id}`}>
+                                <Link href={`/user/`}>
                                     <Image src={session?.user?.image} alt="profile" width={35} height={20}
                                            className="rounded-full"/>
                                 </Link>
