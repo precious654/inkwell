@@ -59,7 +59,7 @@ const Nav = async () => {
                             </li>
                             <li>
                                 <Link href={`/user/`}>
-                                    <Image src={session?.user?.image} alt="profile" width={35} height={20}
+                                    <Image src={session?.user?.image ?? ""} alt="profile" width={35} height={20}
                                            className="rounded-full"/>
                                 </Link>
                             </li>
