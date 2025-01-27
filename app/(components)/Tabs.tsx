@@ -12,7 +12,7 @@ const Tabs = ({about}: {about: string}) => {
     const[tabView, setTabView] = React.useState("articles");
     const likedData = data.filter( (item: BlogData) => item.id < 4);
 
-    const toggleTabView = (event: any) => {
+    const toggleTabView = (event: React.MouseEvent<HTMLParagraphElement>) => {
         setTabView(event.target.innerHTML.toLowerCase());
     }
 
