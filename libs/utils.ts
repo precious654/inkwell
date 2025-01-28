@@ -1,6 +1,6 @@
 export function formatTime(date: Date): string {
     const now = new Date();
-    const seconds = Math.floor(now - date);
+    const seconds = Math.floor(Number(now) - Number(date));
 
     const intervals = {
         year: 31536000,  // 60 * 60 * 24 * 365
