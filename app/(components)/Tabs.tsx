@@ -13,7 +13,7 @@ const Tabs = ({about}: {about: string}) => {
     const likedData = data.filter( (item: BlogData) => item.id < 4);
 
     const toggleTabView = (event: React.MouseEvent<HTMLParagraphElement>) => {
-        setTabView(event.target.innerHTML.toLowerCase());
+        setTabView(event.currentTarget.innerHTML.toLowerCase());
     }
 
     return (
