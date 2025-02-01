@@ -40,7 +40,7 @@ const Nav = async () => {
                                 </Link>
                             </li>
                             <li>
-                                <BellDot size={23}/>
+                                <BellDot size={20}/>
                             </li>
                             <li>
                                 <form
@@ -51,7 +51,7 @@ const Nav = async () => {
                                 >
                                     <button
                                         type="submit"
-                                        className="py-2 px-4 rounded-xl hover:bg-[#333333] hover:text-[#FFFFFF]"
+                                        className="py-1.5 px-4 rounded-xl bg-red-400 text-[#FFFFFF]"
                                     >
                                         Log out
                                     </button>
@@ -73,7 +73,7 @@ const Nav = async () => {
                         >
                             <button
                                 type="submit"
-                                className="py-2 px-4 rounded-xl hover:bg-[#333333] hover:text-[#FFFFFF]"
+                                className="py-1.5 px-4 rounded-xl bg-red-400 text-[#FFFFFF]"
                             >
                                 Sign in
                             </button>

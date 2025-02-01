@@ -33,7 +33,7 @@ const Tabs = ({about}: {about: string}) => {
                                     return (
                                         <div key={item.id}>
                                             <Link href={`/article/${item.id}`}>
-                                                <Image src={image} alt={item.title} width={270} height={150}
+                                                <Image src={image} alt={item.title} width={290} height={150}
                                                        className="rounded-lg"/>
                                             </Link>
                                             <div className="flex flex-col gap-1 text-sm mt-1">
@@ -41,15 +41,15 @@ const Tabs = ({about}: {about: string}) => {
                                                       className="font-semibold">{item.title}</Link>
                                                 <div className="flex justify-between items-center">
                                                     <p className="capitalize text-red-500">{item.category}</p>
-                                                    <div className="flex items-center gap-2">
+                                                    <div className="flex items-center gap-1">
                                                         <div
-                                                            className="flex items-center gap-1 px-1.5 py-0.5 border border-gray-200 rounded-2xl shadow-md text-xs">
-                                                            <FaHeart className="text-red-500"/>
+                                                            className="flex items-center gap-1 px-1.5 py-0.5 text-xs">
+                                                            <FaHeart />
                                                             <p>{item.likes}</p>
                                                         </div>
                                                         <div
-                                                            className="flex items-center gap-1 px-1.5 py-0.5 border border-gray-200 rounded-2xl shadow-md text-xs">
-                                                            <Eye/>
+                                                            className="flex items-center gap-1 px-1.5 py-0.5 text-xs">
+                                                            <Eye size={17}/>
                                                             <p>{item.views}</p>
                                                         </div>
                                                     </div>
@@ -67,7 +67,7 @@ const Tabs = ({about}: {about: string}) => {
                                     return (
                                         <div key={item.id}>
                                             <Link href={`/article/${item.id}`}>
-                                                <Image src={image} alt={item.title} width={270} height={150}
+                                                <Image src={image} alt={item.title} width={290} height={150}
                                                        className="rounded-lg"/>
                                             </Link>
                                             <div className="flex flex-col gap-1 text-sm mt-1">
@@ -75,15 +75,15 @@ const Tabs = ({about}: {about: string}) => {
                                                       className="font-semibold">{item.title}</Link>
                                                 <div className="flex justify-between items-center">
                                                     <p className="capitalize text-red-500">{item.category}</p>
-                                                    <div className="flex items-center gap-2">
+                                                    <div className="flex items-center gap-1">
                                                         <div
-                                                            className="flex items-center gap-1 px-1.5 py-0.5 border border-gray-200 rounded-2xl shadow-md text-xs">
-                                                            <FaHeart className="text-red-500"/>
+                                                            className="flex items-center gap-1 px-1.5 py-0.5 text-xs">
+                                                            <FaHeart />
                                                             <p>{item.likes}</p>
                                                         </div>
                                                         <div
-                                                            className="flex items-center gap-1 px-1.5 py-0.5 border border-gray-200 rounded-2xl shadow-md text-xs">
-                                                            <Eye/>
+                                                            className="flex items-center gap-1 px-1.5 py-0.5 text-xs">
+                                                            <Eye size={17}/>
                                                             <p>{item.views}</p>
                                                         </div>
                                                     </div>
