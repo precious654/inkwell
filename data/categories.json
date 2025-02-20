@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "main": "Business",
+    "sub": [
+      "startup", "employee","success", "videos", "markets"
+    ]
+  },
+  {
+    "id": 2,
+    "main": "Technology",
+    "sub": [
+      "innovate", "gadget","innovative crisis", "upstarts", "future tech"
+    ]
+  },
+  {
+    "id": 3,
+    "main": "Travel",
+    "sub": [
+      "destinations", "food & drink","stay", "news", "videos"
+    ]
+  },
+  {
+    "id": 4,
+    "main": "Sports",
+    "sub": [
+      "football", "tennis","golf", "motorsports", "esports"
+    ]
+  },
+  {
+    "id": 5,
+    "main": "Entertainment",
+    "sub": [
+      "movies", "artist","television", "influencer", "viral"
+    ]
+  },
+  {
+    "id": 6,
+    "main": "Features",
+    "sub": [
+      "as equals", "call to earth","freedom project", "inside asia", "2 degrees"
+    ]
+  },
+  {
+    "id": 7,
+    "main": "Weather",
+    "sub": [
+      "climate", "storm tracker","wildfire tracker", "earthquake", "videos"
+    ]
+  },
+  {
+    "id": 8,
+    "main": "More",
+    "sub": [
+      "design", "mentorship","investment", "work for inkwell", "support us"
+    ]
+  }
+]

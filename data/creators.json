@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "alex young",
+    "profession": "Mystery Writer",
+    "company": "BBC News",
+    "location": "california, USA",
+    "bio": "I am an enthusiastic archaeologist who enjoys writing mystery novels.",
+    "description": "I’m Alex Young, a builder of worlds and creator of epic tales. My stories are intricately designed, with magic systems and plots that challenge the imagination. I love crafting characters who feel real, even in extraordinary settings. Through my books, I aim to immerse you in adventures you’ll never forget.",
+    "articles": 5,
+    "likes": 568
+  },
+  {
+    "id": 2,
+    "name": "joe alen",
+    "profession": "Fantasy Author and Philologist",
+    "company": "CNN",
+    "location": "New York, USA",
+    "bio": "I am passionate about inventing languages. One of the fictional tongues I've invented is the Elvish tongue",
+    "description": "I’m Joe Alen, a weaver of myths and dreams. I craft stories that dance between whimsy and darkness, drawing on folklore, history, and imagination. Whether it’s a tale for children or adults, my goal is to remind you that there’s magic in the world—if you’re willing to look for it.",
+    "articles": 5,
+    "likes": 256
+  },
+  {
+    "id": 3,
+    "name": "alexa timber",
+    "profession": "Poet, Memoirist, and Civil Rights Activist",
+    "company": "Formula 1",
+    "location": "toronto, canada",
+    "bio": "I love cooking and sometimes I blend my culinary expertise with my storytelling. I wrote a cookbook (Hallelujah! The Welcome Table), please check it out",
+    "description": "I am Alexa Timber, a writer who seeks to capture the ebb and flow of human consciousness. My prose is an exploration of time, memory, and the emotions that shape us. I strive to reveal the profound in the ordinary, to illuminate the quiet moments that often go unnoticed.",
+    "articles": 5,
+    "likes": 463
+  },
+  {
+    "id": 4,
+    "image": "",
+    "profession": "Novelist",
+    "name": "Ashley star",
+    "company": "Goal",
+    "location": "texas, USA",
+    "bio": "I am a dedicated long-distance runner and have completed multiple marathons. I've written a memoir about it, What I Talk About When I Talk About Running. Check it out!!!!",
+    "description": "I am Ashley Star, a writer who walks the fine line between reality and dreams. My stories often delve into the surreal, weaving ordinary lives with extraordinary mysteries. I enjoy exploring themes of loneliness, love, and the quiet beauty hidden in everyday life. Through my words, I invite you to step into a world where anything feels possible, yet profoundly human.",
+    "articles": 5,
+    "likes": 165
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Where to watch 'john wick: chapter 4'",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum eveniet odit rerum sapiente ullam.",
+    "author": "Netflix",
+    "createdAt": "12 minutes ago",
+    "category": "movies",
+    "readTime": "4 min read",
+    "image": "https://static1.cbrimages.com//wp-content/uploads/2023/02/john-wick-4-paris-poster.jpg",
+    "views": 3094,
+    "likes": 1038
+  },
+  {
+    "id": 2,
+    "title": "'He deserves a lot more' verstappen backs alonso",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum eveniet odit rerum sapiente ullam.",
+    "author": "alexa timber",
+    "createdAt": "3 hours ago",
+    "category": "sport",
+    "readTime": "4 min read",
+    "image": "",
+    "views": 1098,
+    "likes": 231
+  },
+  {
+    "id": 3,
+    "title": "Where to watch 'john wick: chapter 4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum eveniet odit rerum sapiente ullam.",
+    "author": "alexa timber",
+    "createdAt": "12 hours ago",
+    "category": "sport",
+    "readTime": "4 min read",
+    "image": "",
+    "views": 95,
+    "likes": 20
+  },
+  {
+    "id": 4,
+    "title": "Where to watch 'john wick: chapter 4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum eveniet odit rerum sapiente ullam.",
+    "author": "alex young",
+    "createdAt": "23 hours ago",
+    "category": "Crime",
+    "readTime": "4 min read",
+    "image": "",
+    "views": 120,
+    "likes": 58
+  },
+  {
+    "id": 5,
+    "title": "Jeremy Bowen: Isreal's unclear road ahead",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum eveniet odit rerum sapiente ullam.",
+    "author": "joe alen",
+    "createdAt": "April 15, 2023",
+    "category": "Middle East",
+    "readTime": "4 min read",
+    "image": "",
+    "views": 50,
+    "likes": 7
+  }
+]
