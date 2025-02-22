@@ -24,3 +24,11 @@ img{
   inline-size: 90%;
   margin: auto;
 }
+
+.article-image{
+  block-size: 32rem;
+}
+
+.article-nav-link {
+  @apply flex capitalize items-center justify-between pb-2 border-b-2 border-[#F2F2F2]
+}
