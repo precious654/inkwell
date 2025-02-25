@@ -6,7 +6,9 @@ import {CiLinkedin} from "react-icons/ci";
 import {LiaFacebookSquare} from "react-icons/lia";
 import {RiTwitterXLine} from "react-icons/ri";
 import {Copy} from 'lucide-react';
+import { FaHeart } from "react-icons/fa";
 import ArticleNav from "@/components/ArticleNav";
+import Link from "next/link";
 
 const Page = async ({params}: { params: Promise<{ articleId: string }> }) => {
     const articleId = (await params).articleId;
@@ -19,13 +21,26 @@ const Page = async ({params}: { params: Promise<{ articleId: string }> }) => {
                     article.map((article: BlogData) => {
                         return (
                             <div key={article.id}>
-                                <div className="flex flex-col gap-2 mb-8">
-                                    <p className="text-3xl font-semibold">{article.title}</p>
-                                    <p>{article.description}</p>
+                                <div className="flex flex-col gap-4 mb-8">
+                                    <div className="flex justify-between">
+                                        <div className="flex flex-col gap-2">
+                                            <p className="text-3xl font-semibold">{article.title}</p>
+                                            <p>{article.description}</p>
+                                        </div>
+                                        <button>
+                                            <FaHeart size={25} className="text-gray-200"/>
+                                        </button>
+                                    </div>
+
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-8">
-                                            <div className="flex flex-col gap-2">
-                                                <p>Written by {article.author}</p>
+                                            <div>
+                                                <p>
+                                                    Written by {" "}
+                                                    <span>
+                                                        <Link href={`/author/${article.id}`} className="hover:underline">{article.author}</Link>
+                                                    </span>
+                                                </p>
                                             </div>
                                             <div>
                                                 <p>

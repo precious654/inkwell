@@ -136,11 +136,8 @@ export default async function Home({
         </section>
 
         <section className="mt-20">
-          <div className="flex items-center justify-between mb-10">
+          <div className="mb-10">
             <p className="text-2xl font-semibold capitalize">must read</p>
-            <Link href="/article" className="text-red-400 font-semibold">
-              See all &#8594;
-            </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-6">
@@ -185,11 +182,8 @@ export default async function Home({
         </section>
 
         <section className="mt-20">
-          <div className="flex items-center justify-between mb-10">
+          <div className="mb-10">
             <p className="text-2xl font-semibold capitalize">Editor&#39;s pick</p>
-            <Link href="/article" className="text-red-400 font-semibold">
-              See all &#8594;
-            </Link>
           </div>
 
           <div className="relative">

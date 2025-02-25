@@ -1,7 +1,8 @@
 import Link from "next/link";
 import {auth, signIn, signOut} from "@/auth";
-import {SquarePen, BellDot} from "lucide-react";
+import { BellDot} from "lucide-react";
 import Image from "next/image";
+import NavRedirectButton from "@/components/NavRedirectButton";
 
 const Nav = async () => {
     const session = await auth();
@@ -34,10 +35,7 @@ const Nav = async () => {
                     {session ? (
                         <ul className="list-none flex gap-4 items-center">
                             <li>
-                                <Link href="/write" className="flex items-center gap-2">
-                                    <SquarePen size={16}/>
-                                    Write
-                                </Link>
+                                <NavRedirectButton />
                             </li>
                             <li>
                                 <BellDot size={20}/>
