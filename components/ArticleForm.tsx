@@ -5,7 +5,15 @@ import searchCategory from "@/actions/searchCategory";
 import addCategory from "@/actions/addCategory";
 import getCategory from "@/actions/getCategory";
 import { CiImageOn } from "react-icons/ci";
-import Image from "next/image";
+
+import "@uiw/react-md-editor/markdown-editor.css";
+import "@uiw/react-markdown-preview/markdown.css";
+import dynamic from "next/dynamic";
+
+const MDEditor = dynamic(
+    () => import("@uiw/react-md-editor"),
+    { ssr: false }
+);
 
 interface Category {
   name: string;
@@ -15,12 +23,12 @@ interface Category {
 }
 
 const Page = () => {
+  const [value, setValue] = React.useState();
   const [formData, setFormData] = React.useState({
     title: "",
     imageUrl: "",
     categoryId: "",
   });
-
   const [category, setCategory] = React.useState("");
   const [categories, setCategories] = React.useState<Category[]>([]);
   const [imagePreview, setImagePreview] = React.useState<any>(null);
@@ -71,28 +79,65 @@ const Page = () => {
         };
       });
       setCategory(data.name);
+      setCategories([]);
     } else {
       console.log(error);
     }
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event?.target?.files?.[0]; // Get the selected file
+    const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result); // Update state with base64 image
+        setImagePreview(reader.result);
       };
-      reader.readAsDataURL(file); // Convert to Data URL
       console.log(reader.result);
+      setFormData((prevState) => {
+        return {
+          ...prevState,
+          imageUrl: reader.result as string,
+        }
+      });
+      reader.readAsDataURL(file);
+    } else {
+      setImagePreview(null);
+      setFormData(prevState => ({
+        ...prevState,
+        imageUrl: ""
+      }));
     }
   };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = {
+      title: formData.title,
+      imageUrl: formData.imageUrl,
+      categoryId: formData.categoryId,
+      content: value,
+    }
+    const response = await fetch("/api/article/create", {
+      method: "POST",
+      body: JSON.stringify({ data }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      console.error("Error creating article:");
+    } else {
+      console.log("Article created successfully!");
+      const editorForm = document.getElementById("editor-form") as HTMLFormElement;
+      editorForm?.reset();
+    }
+  }
 
   console.log(formData);
 
   return (
     <main className="w-full flex justify-center items-center py-5">
-      <form className="flex flex-col gap-3 w-7/12">
+      <form className="flex flex-col gap-5 w-7/12">
         <input
           type="text"
           name="title"
@@ -108,7 +153,7 @@ const Page = () => {
           required
           className="p-3 rounded-lg border-2 border-gray-200 outline-0"
         ></textarea>
-        <div>
+        <div className="flex items-center justify-between w-full">
           <div>
             <input
               type="file"
@@ -126,23 +171,34 @@ const Page = () => {
               <p className="text-sm">Add Image</p>
             </label>
           </div>
-          {/* {imagePreview && (
-            <Image
+          {imagePreview && (
+            <img
               src={imagePreview}
               alt="The selected image"
-              className="w-9 h-9 rounded-lg"
+              className="rounded-lg"
+              style={{ maxWidth: '300px', maxHeight: '300px' }}
             />
-          )} */}
+          )}
         </div>
-        <input
-          type="text"
-          name="category"
-          value={category}
-          placeholder="Your Article Category"
-          required
-          className="p-3 rounded-lg border-2 border-gray-200 outline-0"
-          onChange={handleSearch}
-        />
+        <div className="flex items-center gap-3">
+          <input
+              type="text"
+              name="category"
+              value={category}
+              placeholder="Your Article Category"
+              required
+              className="p-3 rounded-lg border-2 border-gray-200 outline-0 w-full"
+              onChange={handleSearch}
+          />
+          {category != "" && categories.length === 0 && (
+              <button
+                  className="bg-red-400 rounded-lg p-3 text-[#FFFFFF] text-sm"
+                  onClick={handleClick}
+              >
+                Add
+              </button>
+          )}
+        </div>
         {categories.length === 0 ? (
           <p>No categories found</p>
         ) : (
@@ -158,14 +214,8 @@ const Page = () => {
             ))}
           </div>
         )}
-        {categories.length === 0 && (
-          <button
-            className="bg-red-400 rounded-lg p-3 text-[#FFFFFF]"
-            onClick={handleClick}
-          >
-            Add Category
-          </button>
-        )}
+        <MDEditor value={value} onChange={setValue} name="content" />
+        <button type="submit" className="p-2 bg-red-400 rounded-lg text-[#FFFFFF]">Submit</button>
       </form>
     </main>
   );
