@@ -10,10 +10,7 @@ import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
 
-const MDEditor = dynamic(
-    () => import("@uiw/react-md-editor"),
-    { ssr: false }
-);
+const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
 interface Category {
   name: string;
@@ -23,6 +20,9 @@ interface Category {
 }
 
 const Page = () => {
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+
   const [value, setValue] = React.useState();
   const [formData, setFormData] = React.useState({
     title: "",
@@ -85,27 +85,38 @@ const Page = () => {
     }
   };
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setImagePreview(reader.result);
       };
-      console.log(reader.result);
-      setFormData((prevState) => {
-        return {
-          ...prevState,
-          imageUrl: reader.result as string,
-        }
-      });
       reader.readAsDataURL(file);
     } else {
       setImagePreview(null);
-      setFormData(prevState => ({
-        ...prevState,
-        imageUrl: ""
-      }));
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+      formData.append("uploadPreset", uploadPreset);
+      const response = await fetch(
+          `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+          {
+            method: 'POST',
+            body: formData,
+          }
+      );
+      if (!response.ok) {
+        throw new Error('Failed to upload image to Cloudinary');
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch(error) {
+      console.log(error);
     }
   };
 
@@ -116,7 +127,7 @@ const Page = () => {
       imageUrl: formData.imageUrl,
       categoryId: formData.categoryId,
       content: value,
-    }
+    };
     const response = await fetch("/api/article/create", {
       method: "POST",
       body: JSON.stringify({ data }),
@@ -128,10 +139,12 @@ const Page = () => {
       console.error("Error creating article:");
     } else {
       console.log("Article created successfully!");
-      const editorForm = document.getElementById("editor-form") as HTMLFormElement;
+      const editorForm = document.getElementById(
+        "editor-form"
+      ) as HTMLFormElement;
       editorForm?.reset();
     }
-  }
+  };
 
   console.log(formData);
 
@@ -176,27 +189,27 @@ const Page = () => {
               src={imagePreview}
               alt="The selected image"
               className="rounded-lg"
-              style={{ maxWidth: '300px', maxHeight: '300px' }}
+              style={{ maxWidth: "300px", maxHeight: "300px" }}
             />
           )}
         </div>
         <div className="flex items-center gap-3">
           <input
-              type="text"
-              name="category"
-              value={category}
-              placeholder="Your Article Category"
-              required
-              className="p-3 rounded-lg border-2 border-gray-200 outline-0 w-full"
-              onChange={handleSearch}
+            type="text"
+            name="category"
+            value={category}
+            placeholder="Your Article Category"
+            required
+            className="p-3 rounded-lg border-2 border-gray-200 outline-0 w-full"
+            onChange={handleSearch}
           />
           {category != "" && categories.length === 0 && (
-              <button
-                  className="bg-red-400 rounded-lg p-3 text-[#FFFFFF] text-sm"
-                  onClick={handleClick}
-              >
-                Add
-              </button>
+            <button
+              className="bg-red-400 rounded-lg p-3 text-[#FFFFFF] text-sm"
+              onClick={handleClick}
+            >
+              Add
+            </button>
           )}
         </div>
         {categories.length === 0 ? (
@@ -215,7 +228,12 @@ const Page = () => {
           </div>
         )}
         <MDEditor value={value} onChange={setValue} name="content" />
-        <button type="submit" className="p-2 bg-red-400 rounded-lg text-[#FFFFFF]">Submit</button>
+        <button
+          type="submit"
+          className="p-2 bg-red-400 rounded-lg text-[#FFFFFF]"
+        >
+          Submit
+        </button>
       </form>
     </main>
   );
